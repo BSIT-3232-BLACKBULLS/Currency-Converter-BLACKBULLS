@@ -4,24 +4,47 @@ using System.Diagnostics;
 
 namespace Currency_Converter.Controllers
 {
-    public class HomeController : Controller
+    public class CurrencyController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<CurrencyController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public CurrencyController(ILogger<CurrencyController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Convert()
+        {
+            // Add logic to convert currencies
+            return View();
+        }
+
+        public IActionResult History()
+        {
+            // Add logic to display conversion history
+            return View();
+        }
+    }
+
+    public class ConversionRateController : Controller
+    {
+        private readonly ILogger<ConversionRateController> _logger;
+
+        public ConversionRateController(ILogger<ConversionRateController> logger)
         {
             _logger = logger;
         }
 
         public IActionResult Index()
         {
+            // Add logic to display current conversion rates
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult UpdateRates()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            // Add logic to update conversion rates
+            return RedirectToAction("Index");
         }
     }
 }
