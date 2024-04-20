@@ -13,7 +13,7 @@ namespace Currency_Converter.Controllers
             _logger = logger;
         }
 
-        public IActionResult Convert()
+        public IActionResult Index()
         {
             // Add logic to convert currencies
             return View();
@@ -23,28 +23,6 @@ namespace Currency_Converter.Controllers
         {
             // Add logic to display conversion history
             return View();
-        }
-    }
-
-    public class ConversionRateController : Controller
-    {
-        private readonly ILogger<ConversionRateController> _logger;
-
-        public ConversionRateController(ILogger<ConversionRateController> logger)
-        {
-            _logger = logger;
-        }
-
-        public IActionResult Index()
-        {
-            // Add logic to display current conversion rates
-            return View();
-        }
-
-        public IActionResult UpdateRates()
-        {
-            // Add logic to update conversion rates
-            return RedirectToAction("Index");
         }
     }
 }
